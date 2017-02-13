@@ -1,0 +1,27 @@
+body {
+  padding-top: 100px;
+}
+
+.launches ul.list-inline {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 80vh;
+  width: 100%;
+  white-space: nowrap;
+
+  li.launch {
+    height: 80vh;
+    width: 200px;
+    white-space: normal;
+    text-align: center;
+
+    .rocket-illustration {
+      margin-left: auto;
+      margin-right: auto;
+      height: 50em;
+    }
+    .panel {
+      height: 100%;
+    }
+  }
+}
