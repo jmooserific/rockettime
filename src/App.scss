@@ -1,27 +1,17 @@
 body {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
-.launches ul.list-inline {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  height: 80vh;
-  width: 100%;
-  white-space: nowrap;
+.Launches {
+  padding-top: 2em;
 
-  li.launch {
-    height: 80vh;
-    width: 200px;
-    white-space: normal;
-    text-align: center;
-
-    .rocket-illustration {
-      margin-left: auto;
-      margin-right: auto;
-      height: 50em;
+  .LaunchItem {
+    span.rocket {
+      font-weight: bold;
     }
-    .panel {
-      height: 100%;
+    span.time {
+      padding-right: 2em;
     }
   }
 }
+
