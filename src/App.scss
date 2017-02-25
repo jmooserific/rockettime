@@ -6,13 +6,17 @@ body {
   padding-top: 2em;
 
   .LaunchItem {
+    margin-top: 5em;
     width: 200px;
-    height: 95vh;
+    height: 80vh;
     float: left;
     text-align: center;
+    border-bottom: 4px solid black;
+    position: relative;
+    padding-bottom: 8px;
 
     img.rocket-illustration {
-      height: 80vh;
+      height: 70vh;
     }
 
     span.name {
@@ -21,6 +25,25 @@ body {
     }
     span.time {
       display: block;
+    }
+
+    div.circle {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      bottom: -10px;
+      border: 4px solid black;
+      border-radius: 8px;
+      margin-left: 92px;
+      background-color: white;
+    }
+    
+  }
+
+  .LaunchItem.future {
+    border-color: #ccc;
+    div.circle {
+      border-color: #ccc;
     }
   }
 }

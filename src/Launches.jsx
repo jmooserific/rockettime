@@ -16,10 +16,11 @@ class Launches extends Component {
     this.serverRequest = 
       axios
         .get('https://launchlibrary.net/1.2/launch?offset=0&limit=9999')
-        .then(function(result) {    
+        .then(function(result) { 
           _this.setState({
             launches: result.data.launches
           });
+          _this.scrollToNow();
         })
   }
   
@@ -31,6 +32,25 @@ class Launches extends Component {
     return <LaunchItem key={key} launch={this.state.launches[index]} />;
   }
 
+  itemSizeGetter(index) {
+    return 200
+  }
+
+  scrollToNow() {
+    var _this = this;
+    this.serverRequest = 
+      axios
+        .get('https://launchlibrary.net/1.2/launch/next/1?mode=list')
+        .then(function(result) { 
+          if (result.data.launches[0] && result.data.launches[0].id) {
+            var nextLaunchKey = result.data.launches[0].id;
+            var nextLaunchIndex = _this.state.launches.findIndex(l => l.id === nextLaunchKey);
+            var xOffset = _this.launchesList.getSpaceBefore(nextLaunchIndex) - ( window.innerWidth / 2 ) + 150;
+            window.scrollBy(xOffset, 0);
+          }
+        })
+  }
+
   render() {
     return (
       <div className="Launches">
@@ -39,6 +59,7 @@ class Launches extends Component {
           itemRenderer={(index, key) => this.renderItem(index, key)}
           length={this.state.launches.length}
           type='uniform'
+          ref={c => this.launchesList = c}
         />
       </div>
     );
