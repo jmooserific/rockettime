@@ -12,13 +12,12 @@ class Nav extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">Launch Lineup</a>
+            <a className="navbar-brand" href="#">RocketTime</a>
           </div>
           <div id="navbar" className="collapse navbar-collapse">
             <ul className="nav navbar-nav">
               <li className="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
         </div>

@@ -6,11 +6,21 @@ body {
   padding-top: 2em;
 
   .LaunchItem {
-    span.rocket {
+    width: 200px;
+    height: 95vh;
+    float: left;
+    text-align: center;
+
+    img.rocket-illustration {
+      height: 80vh;
+    }
+
+    span.name {
       font-weight: bold;
+      display: block;
     }
     span.time {
-      padding-right: 2em;
+      display: block;
     }
   }
 }
