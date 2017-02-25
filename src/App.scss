@@ -3,8 +3,6 @@ body {
 }
 
 .Launches {
-  padding-top: 2em;
-
   .LaunchItem {
     margin-top: 3em;
     width: 200px;
@@ -14,6 +12,7 @@ body {
     border-bottom: 4px solid black;
     position: relative;
     padding-bottom: 8px;
+    margin-bottom: 2em;
 
     img.rocket-illustration {
       height: 70vh;
