@@ -6,7 +6,7 @@ body {
   padding-top: 2em;
 
   .LaunchItem {
-    margin-top: 5em;
+    margin-top: 3em;
     width: 200px;
     height: 80vh;
     float: left;
@@ -37,10 +37,27 @@ body {
       margin-left: 92px;
       background-color: white;
     }
-    
   }
 
-  .LaunchItem.future {
+  .LaunchItem.Success {
+    border-color: #5cb85c;
+    div.circle {
+      border-color: #5cb85c;
+    }
+  }
+  .LaunchItem.Failed {
+    border-color: #5cb85c;
+    div.circle {
+      border-color: #d9534f;
+    }
+  }
+  .LaunchItem.Green {
+    border-color: #ccc;
+    div.circle {
+      border-color: #999;
+    }
+  }
+  .LaunchItem.Red {
     border-color: #ccc;
     div.circle {
       border-color: #ccc;

@@ -15,7 +15,7 @@ class Launches extends Component {
     var _this = this;
     this.serverRequest = 
       axios
-        .get('https://launchlibrary.net/1.2/launch?offset=0&limit=9999')
+        .get('https://launchlibrary.net/1.2/launch?mode=summary&offset=0&limit=9999')
         .then(function(result) { 
           _this.setState({
             launches: result.data.launches
