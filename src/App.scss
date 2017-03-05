@@ -1,5 +1,12 @@
 body {
   padding-top: 50px;
+  background-color: rgb(219, 213, 205);
+}
+
+a.navbar-brand {
+  color: white;
+  font-weight: 300;
+  font-size: 2em;
 }
 
 .Launches {
@@ -14,7 +21,7 @@ body {
     padding-bottom: 8px;
     margin-bottom: 2em;
 
-    img.rocket-illustration {
+    img.RocketImage {
       height: 70vh;
     }
 
@@ -22,6 +29,7 @@ body {
       font-weight: bold;
       display: block;
     }
+
     span.time {
       display: block;
     }
@@ -34,7 +42,7 @@ body {
       border: 4px solid black;
       border-radius: 8px;
       margin-left: 92px;
-      background-color: white;
+      background-color: rgb(219, 213, 205);
     }
   }
 
@@ -44,22 +52,28 @@ body {
       border-color: #5cb85c;
     }
   }
+
   .LaunchItem.Failed {
     border-color: #5cb85c;
     div.circle {
       border-color: #d9534f;
     }
-  }
-  .LaunchItem.Green {
-    border-color: #ccc;
-    div.circle {
-      border-color: #999;
+    img.RocketImage {
+      opacity: 0.33;
     }
   }
-  .LaunchItem.Red {
-    border-color: #ccc;
+  
+  .LaunchItem.Green {
+    border-color: white;
     div.circle {
-      border-color: #ccc;
+      border-color: white;
+    }
+  }
+  
+  .LaunchItem.Red {
+    border-color: white;
+    div.circle {
+      border-color: rgba(255,255,255,0.33);
     }
   }
 }

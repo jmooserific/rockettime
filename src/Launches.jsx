@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactList from 'react-list';
 import LaunchItem from './LaunchItem.jsx';
-import axios from 'axios';
+import Axios from 'axios';
 
 class Launches extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Launches extends Component {
   componentWillMount() {
     var _this = this;
     this.serverRequest = 
-      axios
+      Axios
         .get('https://launchlibrary.net/1.2/launch?mode=summary&offset=0&limit=9999')
         .then(function(result) { 
           _this.setState({
@@ -39,7 +39,7 @@ class Launches extends Component {
   scrollToNow() {
     var _this = this;
     this.serverRequest = 
-      axios
+      Axios
         .get('https://launchlibrary.net/1.2/launch/next/1?mode=list')
         .then(function(result) { 
           if (result.data.launches[0] && result.data.launches[0].id) {
@@ -59,6 +59,7 @@ class Launches extends Component {
           itemRenderer={(index, key) => this.renderItem(index, key)}
           length={this.state.launches.length}
           type='uniform'
+          useStaticSize={true}
           ref={c => this.launchesList = c}
         />
       </div>

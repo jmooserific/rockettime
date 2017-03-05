@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import rocket from './Falcon9FT.svg';
+import RocketImage from './RocketImage.jsx';
 import Time from 'react-time'
-import moment from 'moment';
+import Moment from 'moment';
 
 class LaunchItem extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      time: moment(this.props.launch.net, 'MMMM D, YYYY HH:mm:ss UTC')
+      time: Moment(this.props.launch.net, 'MMMM D, YYYY HH:mm:ss UTC'),
     };
     this.statusNames = ['Green', 'Red', 'Success', 'Failed'];
   }
@@ -23,7 +23,7 @@ class LaunchItem extends Component {
   render() {
     return (
       <div className={this.classNames()}>
-        <img src={rocket} className="rocket-illustration" alt="Falcon 9FT" />
+        <RocketImage name={this.props.launch.name.split(' | ')[0]} key={'rocketImage' + this.props.launch.id} />
         <span className="name">{this.props.launch.name}</span>
         <span className="time"><Time value={this.props.launch.net} format="MM/DD/YYYY" valueFormat="MMMM D, YYYY HH:mm:ss UTC" /></span>
         <div className="circle" />

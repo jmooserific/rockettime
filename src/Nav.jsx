@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Nav extends Component {
   render() {
     return (
-      <nav className="Nav navbar navbar-default navbar-fixed-top">
+      <nav className="Nav navbar navbar-fixed-top">
         <div className="container">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -12,13 +12,9 @@ class Nav extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">RocketTime</a>
+            <a className="navbar-brand" href="#">rocket time</a>
           </div>
           <div id="navbar" className="collapse navbar-collapse">
-            <ul className="nav navbar-nav">
-              <li className="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-            </ul>
           </div>
         </div>
       </nav>
