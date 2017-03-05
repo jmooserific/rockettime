@@ -117,7 +117,8 @@ module.exports = {
           /\.(js|jsx)$/,
           /\.css$/,
           /\.json$/,
-          /\.svg$/
+          /\.svg$/,
+          /\.scss$/
         ],
         loader: 'url',
         query: {
@@ -131,6 +132,12 @@ module.exports = {
         include: paths.appSrc,
         loader: 'babel',
         
+      },
+      // Process SCSS
+      {
+        test: /\.scss$/,
+        include: paths.appSrc,
+        loaders: ["style", "css", "sass"]
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
