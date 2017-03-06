@@ -12,7 +12,7 @@ class Nav extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">rocket time</a>
+            <a className="navbar-brand" href="#"><span>rocket</span>time!</a>
           </div>
           <div id="navbar" className="collapse navbar-collapse">
           </div>
