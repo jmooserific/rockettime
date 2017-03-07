@@ -1,0 +1,73 @@
+.LaunchItem {
+  margin-top: 3em;
+  width: 200px;
+  height: 80vh;
+  float: left;
+  text-align: center;
+  border-bottom: 4px solid black;
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: 2em;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  img.RocketImage {
+    height: 70vh;
+  }
+
+  span.name {
+    font-weight: bold;
+    display: block;
+  }
+
+  span.time {
+    display: block;
+  }
+
+  div.circle {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: -10px;
+    border: 4px solid black;
+    border-radius: 8px;
+    margin-left: 92px;
+    background-color: rgb(219, 213, 205);
+  }
+}
+
+.LaunchItem.Success {
+  border-color: #5cb85c;
+  div.circle {
+    border-color: #5cb85c;
+  }
+}
+
+.LaunchItem.Failed {
+  border-color: #5cb85c;
+  div.circle {
+    border-color: #d9534f;
+  }
+  img.RocketImage {
+    opacity: 0.33;
+  }
+}
+
+.LaunchItem.Green {
+  border-color: white;
+  div.circle {
+    border-color: white;
+  }
+}
+
+.LaunchItem.Red {
+  border-color: white;
+  div.circle {
+    border-color: rgba(255,255,255,0.33);
+  }
+}
