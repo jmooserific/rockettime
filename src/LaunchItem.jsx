@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import RocketImage from './RocketImage.jsx';
 import LaunchDetails from './LaunchDetails.jsx';
 import Time from 'react-time'
