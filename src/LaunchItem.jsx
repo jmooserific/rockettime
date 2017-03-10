@@ -46,10 +46,9 @@ class LaunchItem extends Component {
 
         <Modal show={this.state.showDetailsModal} onHide={this.closeDetailsModal}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.rocketName}<br/><small>{this.props.missionName}</small></Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <LaunchDetails key={'rocketDetails_' + this.props.launch.id} />
+            <LaunchDetails launchID={this.props.launch.id} key={'rocketDetails_' + this.props.launch.id} />
           </Modal.Body>
         </Modal>
       </a>
