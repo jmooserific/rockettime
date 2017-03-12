@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs, Tab, Table, Image } from 'react-bootstrap';
+import { Tabs, Tab, Image } from 'react-bootstrap';
 import Axios from 'axios';
 import './LaunchDetails.scss';
 
@@ -7,7 +7,7 @@ class LaunchDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      launch: {windowstart: null, rocket: {}}
+      launch: { rocket: { agencies: {} } }
     };
   }
 
@@ -29,25 +29,22 @@ class LaunchDetails extends Component {
       <div className="LaunchDetails">
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Rocket">
-            <h1>{this.state.launch.rocket.name}</h1>
+            <h2>{this.state.launch.rocket.name}</h2>
+            <dl className="dl-horizontal">
+              <dt>Family</dt>
+              <dd>{this.state.launch.rocket.familyname}</dd>
+              <dt>Configuration</dt>
+              <dd>{this.state.launch.rocket.configuration}</dd>
+            </dl>
             <Image src={this.state.launch.rocket.imageURL} responsive />
-            <Table striped bordered condensed hover>
-              <tbody>
-                <tr>
-                  <td>ID</td>
-                  <td>{this.props.launchID}</td>
-                </tr>
-                <tr>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-              </tbody>
-            </Table>
           </Tab>
-          <Tab eventKey={2} title="Missions">
+          <Tab eventKey={2} title="Launch">
 
           </Tab>
-          <Tab eventKey={3} title="Locations">
+          <Tab eventKey={3} title="Missions">
+
+          </Tab>
+          <Tab eventKey={4} title="Locations">
 
           </Tab>
         </Tabs>
