@@ -29,7 +29,13 @@ class Launches extends Component {
   }
 
   renderItem(index, key) {
-    return <LaunchItem key={key} launch={this.state.launches[index]} />;
+    const [rocketName, missionName] = this.state.launches[index].name.split(' | ');
+
+    return <LaunchItem key={key} 
+                       launch={this.state.launches[index]} 
+                       rocketName={rocketName} 
+                       missionName={missionName} 
+                      />;
   }
 
   itemSizeGetter(index) {
