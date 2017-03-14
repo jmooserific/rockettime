@@ -1,5 +1,6 @@
 #To Do
 
+- Filtering results (search)
 - Detail view of each launch, including information about:
   - mission
   - rocket
