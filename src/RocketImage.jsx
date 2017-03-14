@@ -34,7 +34,7 @@ class RocketImage extends Component {
 
     // Exceptions!
     if (/^falcon_9/.test(normalizedName) && /^SES-\d+$/.test(mission)) {
-      normalizedName = normalizedName + '_dragon';
+      normalizedName += '_dragon';
     }
     return normalizedName;
   }
