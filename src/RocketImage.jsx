@@ -33,7 +33,7 @@ class RocketImage extends Component {
     var normalizedName = name.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
 
     // Exceptions!
-    if (/^falcon_9/.test(normalizedName) && /^SES-\d+$/.test(mission)) {
+    if (/^falcon_9/.test(normalizedName) && /^CRS-\d+$/.test(mission)) {
       normalizedName += '_dragon';
     }
     return normalizedName;
