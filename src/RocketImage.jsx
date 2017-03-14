@@ -26,7 +26,6 @@ class RocketImage extends Component {
     const normalizedName = this.normalizeName(name, mission);
     const heightInMeters = this.imageFiles[normalizedName] ? this.imageFiles[normalizedName].height : 55;
     const normalizedHeight = 70 / 111 * heightInMeters; // Saturn V was 111m tall
-    console.log(normalizedName, heightInMeters);
     return { height: normalizedHeight + "vh" };
   }
 
