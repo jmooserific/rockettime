@@ -38,10 +38,12 @@ class LaunchItem extends Component {
   render() {
     return (
       <a className={this.classNames()} onClick={this.openDetailsModal}>
-        <RocketImage name={this.rocketName} key={'rocketImage_' + this.props.launch.id} />
-        <span className="name">{this.props.launch.name}</span>
-        <span className="time"><Time value={this.props.launch.net} format="MM/DD/YYYY" valueFormat="MMMM D, YYYY HH:mm:ss UTC" /></span>
-
+        <RocketImage name={this.props.rocketName} mission={this.props.missionName} key={'rocketImage_' + this.props.launch.id} />
+        <div className="caption">
+          <span className="rocketName">{this.props.rocketName}</span>
+          <span className="missionName">{this.props.missionName}</span>
+          <span className="time"><Time value={this.props.launch.net} format="MM/DD/YYYY" valueFormat="MMMM D, YYYY HH:mm:ss UTC" /></span>
+        </div>
         <div className="circle" />
 
         <Modal show={this.state.showDetailsModal} onHide={this.closeDetailsModal}>
