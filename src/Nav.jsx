@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
 import './Nav.scss';
 
-
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSearchTextInputChange = this.handleSearchTextInputChange.bind(this);
+  }
+
+  handleSearchTextInputChange(e) {
+    this.props.onSearchTextInput(e.target.value);
+  }
+
   render() {
     return (
       <Navbar fixedTop>
@@ -13,6 +21,18 @@ class Nav extends Component {
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
+        <Navbar.Collapse>
+          <Navbar.Form pullRight>
+            <FormGroup>
+              <FormControl type="text" 
+                           placeholder="Search…" 
+                           value={this.props.searchText} 
+                           onChange={this.handleSearchTextInputChange}
+                          />
+            </FormGroup>
+            {' '}
+          </Navbar.Form>
+        </Navbar.Collapse>
       </Navbar>
     );
   }

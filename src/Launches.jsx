@@ -12,10 +12,20 @@ class Launches extends Component {
   }
 
   componentWillMount() {
+    this.getLaunches(this.props.searchText);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.searchText !== nextProps.searchText ) {
+      this.getLaunches(nextProps.searchText);
+    }
+  }
+
+  getLaunches(searchText) {
     var _this = this;
     this.serverRequest = 
       Axios
-        .get('https://launchlibrary.net/1.2/launch?mode=summary&offset=0&limit=9999')
+        .get('https://launchlibrary.net/1.2/launch?name='+ searchText +'&mode=summary&offset=0&limit=9999')
         .then(function(result) { 
           _this.setState({
             launches: result.data.launches
@@ -43,6 +53,7 @@ class Launches extends Component {
   }
 
   scrollToNow() {
+    // TODO: Update this to handle searchtext and when not at x=0
     var _this = this;
     this.serverRequest = 
       Axios
