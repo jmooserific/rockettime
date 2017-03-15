@@ -1,23 +1,39 @@
 import React, { Component } from 'react';
+import { Navbar, FormGroup, FormControl } from 'react-bootstrap';
+import './Nav.scss';
 
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSearchTextInputChange = this.handleSearchTextInputChange.bind(this);
+  }
+
+  handleSearchTextInputChange(e) {
+    this.props.onSearchTextInput(e.target.value);
+  }
+
   render() {
     return (
-      <nav className="Nav navbar navbar-fixed-top">
-        <div className="container">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <a className="navbar-brand" href="#"><span>rocket</span>time!</a>
-          </div>
-          <div id="navbar" className="collapse navbar-collapse">
-          </div>
-        </div>
-      </nav>
+      <Navbar fixedTop>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="#"><span>rocket</span>time!</a>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Navbar.Form pullRight>
+            <FormGroup>
+              <FormControl type="text" 
+                           placeholder="Search…" 
+                           value={this.props.searchText} 
+                           onChange={this.handleSearchTextInputChange}
+                          />
+            </FormGroup>
+            {' '}
+          </Navbar.Form>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }

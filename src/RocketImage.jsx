@@ -7,7 +7,10 @@ class RocketImage extends Component {
     super(props);
 
     this.imageFiles = {
+            falcon_1: { height: 21.3 },
+            falcon_9_v1_0: { height: 63.2 },
             falcon_9_v1_1: { height: 81.5 },
+            falcon_9: { height: 81.5 },
             falcon_9_v1_1_dragon: { height: 76.5 },
             falcon_9_full_thrust: { height: 83.1 },
             falcon_9_full_thrust_dragon: { height: 78.1 },
@@ -34,7 +37,9 @@ class RocketImage extends Component {
 
     // Exceptions!
     if (/^falcon_9/.test(normalizedName) && /^SpX CRS-\d+$/.test(mission)) {
-      normalizedName += '_dragon';
+      if (this.imageFiles[normalizedName + '_dragon']) {
+        normalizedName += '_dragon';
+      }
     }
     return normalizedName;
   }
