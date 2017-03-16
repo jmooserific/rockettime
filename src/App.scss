@@ -2,3 +2,17 @@ body {
   padding-top: 50px;
   background-color: rgb(219, 213, 205);
 }
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  font-size: 80%;
+  color: rgba(0,0,0,0.5);
+  margin-bottom: 1em;
+
+  p {
+    margin: 0;
+  }
+}
