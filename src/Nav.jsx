@@ -24,8 +24,9 @@ class Nav extends Component {
         <Navbar.Collapse>
           <Navbar.Form pullRight>
             <FormGroup>
-              <FormControl type="text" 
-                           placeholder="Search…" 
+              <FormControl type="search"
+                           results="5"
+                           autoSave="rocket_time_search" 
                            value={this.props.searchText} 
                            onChange={this.handleSearchTextInputChange}
                           />

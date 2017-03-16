@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactList from 'react-list';
 import LaunchItem from './LaunchItem.jsx';
 import Axios from 'axios';
+import Moment from 'moment';
 
 class Launches extends Component {
   constructor(props) {
@@ -53,19 +54,11 @@ class Launches extends Component {
   }
 
   scrollToNow() {
-    // TODO: Update this to handle searchtext and when not at x=0
-    var _this = this;
-    this.serverRequest = 
-      Axios
-        .get('https://launchlibrary.net/1.2/launch/next/1?mode=list')
-        .then(function(result) { 
-          if (result.data.launches[0] && result.data.launches[0].id) {
-            var nextLaunchKey = result.data.launches[0].id;
-            var nextLaunchIndex = _this.state.launches.findIndex(l => l.id === nextLaunchKey);
-            var xOffset = _this.launchesList.getSpaceBefore(nextLaunchIndex) - ( window.innerWidth / 2 ) + 150;
-            window.scrollBy(xOffset, 0);
-          }
-        })
+    const time = Moment();
+
+    const nextLaunchIndex = this.state.launches.findIndex(l => Moment(l.net, 'MMMM D, YYYY HH:mm:ss UTC') > time);
+    const xOffset = this.launchesList.getSpaceBefore(nextLaunchIndex) - ( window.innerWidth / 2 ) + 150 - window.pageXOffset;
+    window.scrollBy(xOffset, 0);
   }
 
   render() {
