@@ -1,7 +1,7 @@
 .LaunchItem {
   margin-top: 3em;
   width: 200px;
-  height: 80vh;
+  height: 70vh;
   float: left;
   border-bottom: 4px solid black;
   position: relative;
@@ -18,37 +18,35 @@
   }
 
   img.RocketImage {
-    height: 70vh;
+    height: 65vh;
     position: absolute;
-    bottom: 11vh;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2vh;
   }
 
-  .caption{
-    height: 10vh;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  .popover {
+    width: 150px;
+    font-size: 80%;
 
-    span {
-      height: 1.5em;
-      overflow: hidden;
-      display: block;
-
-      &.rocketName {
-        font-weight: bold;
-      }
+    h3.popover-title {
+      font-size: 1em;
     }
 
+    .popover-content {
+      overflow: hidden;
+    }
 
+    p {
+      margin-bottom: 0.25em;
+    }
   }
-
-
 
   div.circle {
     width: 16px;
     height: 16px;
     position: absolute;
-    left: 0;
+    left: 92px;
     bottom: -10px;
     border: 4px solid black;
     border-radius: 8px;

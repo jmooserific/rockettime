@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal } from 'react-bootstrap';
+import { Modal, Popover } from 'react-bootstrap';
 import RocketImage from './RocketImage.jsx';
 import LaunchDetails from './LaunchDetails.jsx';
 import Time from 'react-time'
@@ -39,11 +39,16 @@ class LaunchItem extends Component {
     return (
       <a className={this.classNames()} onClick={this.openDetailsModal}>
         <RocketImage name={this.props.rocketName} mission={this.props.missionName} key={'rocketImage_' + this.props.launch.id} />
-        <div className="caption">
-          <span className="rocketName">{this.props.rocketName}</span>
-          <span className="missionName">{this.props.missionName}</span>
-          <span className="time"><Time value={this.props.launch.net} format="MM/DD/YYYY" valueFormat="MMMM D, YYYY HH:mm:ss UTC" /></span>
-        </div>
+        <Popover
+          id={"popover_"+ this.props.launch.id}
+          placement="right"
+          positionLeft="52%"
+          positionTop="50vh"
+          title={this.props.rocketName}
+        >
+          <p>{this.props.missionName}</p>
+          <p><Time value={this.props.launch.net} format="MM/DD/YYYY" valueFormat="MMMM D, YYYY HH:mm:ss UTC" /></p>
+        </Popover>
         <div className="circle" />
 
         <Modal show={this.state.showDetailsModal} onHide={this.closeDetailsModal}>
