@@ -1,6 +1,8 @@
-# rocket time
+# It's rocket time!
 
-http://rocketti.me
+![Screenshot](https://cloud.githubusercontent.com/assets/1071856/24228025/d48d23d6-0f47-11e7-9cc9-5a01fad37952.png)
+
+Live Site: http://rocketti.me
 
 A React web application that displays an interactive timeline of rocket launches.
 
