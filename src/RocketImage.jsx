@@ -67,4 +67,9 @@ class RocketImage extends Component {
   }
 }
 
+RocketImage.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  mission: React.PropTypes.string.isRequired,
+};
+
 export default RocketImage;

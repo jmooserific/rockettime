@@ -63,4 +63,14 @@ class LaunchItem extends Component {
   }
 }
 
+LaunchItem.propTypes = {
+  rocketName: React.PropTypes.string.isRequired,
+  missionName: React.PropTypes.string.isRequired,
+  launch: React.PropTypes.shape({
+    id: React.PropTypes.number.isRequired,
+    status: React.PropTypes.number.isRequired,
+    net: React.PropTypes.string.isRequired
+  }).isRequired
+};
+
 export default LaunchItem;
