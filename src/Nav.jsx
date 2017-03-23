@@ -39,4 +39,8 @@ class Nav extends Component {
   }
 }
 
+Nav.propTypes = {
+  onSearchTextInput: React.PropTypes.func.isRequired
+};
+
 export default Nav;

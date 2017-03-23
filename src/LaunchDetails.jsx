@@ -53,4 +53,8 @@ class LaunchDetails extends Component {
   }
 }
 
+LaunchDetails.propTypes = {
+  launchID: React.PropTypes.number.isRequired,
+};
+
 export default LaunchDetails;

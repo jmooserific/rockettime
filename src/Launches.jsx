@@ -77,4 +77,8 @@ class Launches extends Component {
   }
 }
 
+Launches.propTypes = {
+  searchText: React.PropTypes.string.isRequired
+};
+
 export default Launches;
