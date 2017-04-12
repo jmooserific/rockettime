@@ -11,9 +11,9 @@ class RocketImage extends Component {
             falcon_9_v1_0: { height: 63.2 },
             falcon_9_v1_1: { height: 81.5 },
             falcon_9: { height: 81.5 },
-            falcon_9_v1_1_dragon: { height: 76.5 },
+            falcon_9_v1_1_dragon: { height: 74.5 },
             falcon_9_full_thrust: { height: 83.1 },
-            falcon_9_full_thrust_dragon: { height: 78.1 },
+            falcon_9_full_thrust_dragon: { height: 76.5 },
             falcon_heavy: {height: 83.1},
           };
     this.imageURL = this.getImageURL(this.props.name, this.props.mission);
