@@ -1,15 +1,21 @@
+@import 'variables';
+
 .navbar-default {
   background-color: inherit;
   border-color: transparent;
 }
 
+.navbar-default .navbar-brand {
+  color: $text-color;
+}
+
 a.navbar-brand {
-  color: white;
   font-weight: 300;
   font-size: 2em;
+  color: $text-color;
 
   span {
-    color: #d9534f;
+    color: $highlight-color;
   }
 }
  
