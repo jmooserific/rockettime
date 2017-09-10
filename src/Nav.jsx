@@ -26,8 +26,8 @@ class Nav extends Component {
             <FormGroup>
               <FormControl type="search"
                            results="5"
-                           autoSave="rocket_time_search" 
-                           value={this.props.searchText} 
+                           autoSave="rocket_time_search"
+                           value={this.props.searchText}
                            onChange={this.handleSearchTextInputChange}
                           />
             </FormGroup>

@@ -24,17 +24,17 @@ class Launches extends Component {
 
   getLaunches(searchText) {
     var _this = this;
-    this.serverRequest = 
+    this.serverRequest =
       Axios
         .get('https://launchlibrary.net/1.2/launch?name='+ searchText +'&mode=summary&offset=0&limit=9999')
-        .then(function(result) { 
+        .then(function(result) {
           _this.setState({
             launches: result.data.launches
           });
           _this.scrollToNow();
         })
   }
-  
+
   componentWillUnmount() {
     this.serverRequest.abort();
   }
@@ -42,10 +42,10 @@ class Launches extends Component {
   renderItem(index, key) {
     const [rocketName, missionName] = this.state.launches[index].name.split(' | ');
 
-    return <LaunchItem key={key} 
-                       launch={this.state.launches[index]} 
-                       rocketName={rocketName} 
-                       missionName={missionName} 
+    return <LaunchItem key={key}
+                       launch={this.state.launches[index]}
+                       rocketName={rocketName}
+                       missionName={missionName}
                       />;
   }
 

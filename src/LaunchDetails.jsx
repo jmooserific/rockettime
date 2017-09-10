@@ -14,10 +14,10 @@ class LaunchDetails extends Component {
   componentWillMount() {
     var launchURL = 'https://launchlibrary.net/1.2/launch/'+ this.props.launchID +'?mode=verbose';
     var _this = this;
-    this.serverRequest = 
+    this.serverRequest =
       Axios
         .get(launchURL)
-        .then(function(result) { 
+        .then(function(result) {
           _this.setState({
             launch: result.data.launches[0]
           });

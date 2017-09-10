@@ -47,14 +47,14 @@ class RocketImage extends Component {
   handleImageLoaded() {
     this.setState({ imageStatus: 'loaded' });
   }
- 
+
   handleImageErrored() {
     this.setState({ imageStatus: 'error' });
   }
 
   render() {
     return (
-      <img 
+      <img
         src={this.imageURL}
         onLoad={this.handleImageLoaded.bind(this)}
         onError={this.handleImageErrored.bind(this)}
