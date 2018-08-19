@@ -14,6 +14,10 @@ class RocketImage extends Component {
             falcon_9_v1_1_dragon: { height: 74.5 },
             falcon_9_full_thrust: { height: 83.1 },
             falcon_9_full_thrust_dragon: { height: 76.5 },
+            falcon_9_block_4: { height: 83.1 },
+            falcon_9_block_4_dragon: { height: 76.5 },
+            falcon_9_block_5: { height: 83.1 },
+            falcon_9_block_5_dragon: { height: 76.5 },
             falcon_heavy: {height: 83.1},
           };
     this.imageURL = this.getImageURL(this.props.name, this.props.mission);
@@ -27,6 +31,7 @@ class RocketImage extends Component {
 
   getStyles(name, mission) {
     const normalizedName = this.normalizeName(name, mission);
+    console.log(normalizedName);
     const heightInMeters = this.imageFiles[normalizedName] ? this.imageFiles[normalizedName].height : 55;
     const normalizedHeight = 70 / 111 * heightInMeters; // Saturn V was 111m tall
     return { height: normalizedHeight + "vh" };
